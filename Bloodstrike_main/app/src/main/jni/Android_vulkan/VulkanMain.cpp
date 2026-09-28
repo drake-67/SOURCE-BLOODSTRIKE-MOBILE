@@ -23,8 +23,8 @@
 
 // Android log function wrappers
 
-#include "imgui/imgui.h"
-#include "imgui/backends/imgui_impl_vulkan.h"
+#include "imgui.h"
+#include "imgui.h"
 
 // Vulkan call wrapper
 #define CALL_VK(func)                                                 \
