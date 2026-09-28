@@ -9,13 +9,12 @@ jobs:
       uses: nttld/setup-ndk@v1
       with:
         ndk-version: r25c
-    - name: Patch
+    - name: Patch CMake
       run: |
         cd Bloodstrike_main/app/src/main/jni
         rm -f Android_vulkan/CreateShaderModule.cpp Android_vulkan/CreateShaderModule.h
-        sed -i '/CreateShaderModule/d' Android_vulkan/*.cpp Android_vulkan/*.h 2>/dev/null || true
-        sed -i '/Log.h/d' Android_vulkan/VulkanMain.cpp || true
-        sed -i 's/#include "Log.h"//' Android_vulkan/VulkanMain.cpp || true
+        sed -i 's|target_link_libraries.*|target_link_libraries(Starcool.sh log z android GLESv2 EGL vulkan)|' CMakeLists.txt
+        cat CMakeLists.txt | tail -n 10
     - name: Build arm64
       run: |
         cd Bloodstrike_main/app/src/main/jni
