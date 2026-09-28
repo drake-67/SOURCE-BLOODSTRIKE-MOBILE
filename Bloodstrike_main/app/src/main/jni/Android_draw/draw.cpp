@@ -54,11 +54,11 @@ extern uint64_t g_LayoutCheckSum;
 std::vector<std::thread> threadPool;
 
 namespace sdk {
-    bool esp_enabled = false;
-    bool esp_box = false;
-    bool esp_line = false;
-    bool esp_distance = false;
-    bool esp_bone = false;
+    bool esp_enabled = true;
+    bool esp_box = true;
+    bool esp_line = true;
+    bool esp_distance = true;
+    bool esp_bone = true;
     int esp_line_pos = 0; // 0: Bottom, 1: Center, 2: Top
 
     bool aimbot_enabled = false;
